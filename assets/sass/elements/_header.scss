@@ -52,10 +52,10 @@
                 a {
                     color: $darkBlue;
                     font-size: 20px;
-                    -webkit-transition: all 1s ease-in-out;
-                    -moz-transition:  all 1s ease-in-out;
-                    -o-transition:  all 1s ease-in-out;
-                    transition:  all 1s ease-in-out;
+                    -webkit-transition: font-size 1s ease-in-out;
+                    -moz-transition:  font-size 1s ease-in-out;
+                    -o-transition:  font-size 1s ease-in-out;
+                    transition:  font-size 1s ease-in-out;
 
                     @include media($desktop) {
                         font-size: 18px;

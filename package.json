@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "autoprefixer": "10.4.5",
+    "bootstrap-icons": "^1.8.2",
     "core-js": "^3.21.1"
   },
   "devDependencies": {

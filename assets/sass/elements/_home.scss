@@ -141,6 +141,10 @@
                     width: 100%;
                 }
 
+                strong {
+                    @include proxsemibold;
+                }
+
                 p {
                     font-size: 20px;
                     line-height: 1.8;

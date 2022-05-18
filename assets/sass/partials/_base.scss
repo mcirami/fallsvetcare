@@ -134,6 +134,11 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 		height: 100%;
 	}
 
+	.wp-block-buttons {
+		justify-content: center;
+		-webkit-justify-content: center;
+	}
+
 	.text_wrap {
 		text-align: center;
 		padding: 10% 0;
