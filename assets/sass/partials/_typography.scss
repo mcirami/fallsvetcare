@@ -1,0 +1,58 @@
+// typography baselines and @font face setups
+
+@font-face {
+    font-family: 'poppins-medium';
+    src: url('fonts/poppins-medium-webfont.eot'), url('fonts/poppins-medium-webfont.ttf') format('truetype'),url('fonts/poppins-medium-webfont.woff') format('woff'), url('fonts/poppins-medium-webfont.woff2') format('woff2'), url('fonts/poppins-medium-webfont.svg#poppinsmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'poppins-semibold';
+    src: url('fonts/poppins-semibold-webfont.eot'), url('fonts/poppins-semibold-webfont.ttf') format('truetype'),url('fonts/poppins-semibold-webfont.woff') format('woff'), url('fonts/poppins-semibold-webfont.woff2') format('woff2'), url('fonts/poppins-semibold-webfont.svg#poppinssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'poppins-bold';
+    src: url('fonts/poppins-bold-webfont.eot'), url('fonts/poppins-bold-webfont.ttf') format('truetype'),url('fonts/poppins-bold-webfont.woff') format('woff'), url('fonts/poppins-bold-webfont.woff2') format('woff2'), url('fonts/poppins-bold-webfont.svg#poppinsbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'oswald-heavy';
+    src: url('fonts/oswald-heavy-webfont.eot'), url('fonts/oswald-heavy-webfont.ttf') format('truetype'),url('fonts/oswald-heavy-webfontt.woff') format('woff'), url('fonts/oswald-heavy-webfont.woff2') format('woff2'), url('fonts/oswald-heavy-webfont.svg#oswaldheavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'proxima-nova-reg';
+    src: url('fonts/ProximaNova-Regular.eot'), url('fonts/ProximaNova-Regular.ttf') format('truetype'),url('fonts/ProximaNova-Regular.woff') format('woff'), url('fonts/ProximaNova-Regular.woff2') format('woff2'), url('fonts/ProximaNova-Regular.svg#proximanovaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'proxima-nova-semibold';
+    src: url('fonts/ProximaNova-Semibold.eot'), url('fonts/ProximaNova-Semibold.ttf') format('truetype'),url('fonts/ProximaNova-Semibold.woff') format('woff'), url('fonts/ProximaNova-Semibold.woff2') format('woff2'), url('fonts/ProximaNova-Semibold.svg#proximanovasemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1, h2 {
+    @include popbold;
+}
+
+h3, h4, a{
+    @include popsemi;
+}
+
+p {
+    @include proxreg;
+}

@@ -1,0 +1,276 @@
+* {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+html, body {
+	min-height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+html {
+	font-size: 62.5%;
+	background: none;
+}
+
+body {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	color: $black;
+	height: 100%;
+	overflow-y: hidden;
+}
+
+.site-main {
+	padding-top: 12%;
+}
+
+.video_wrapper {
+    @include span-columns(12);
+	padding-bottom: 56.25%;
+	height: 0;
+	position: relative;
+	cursor: pointer;
+	margin: auto;
+	
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.full_width {
+	@include span-columns(12);
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+::selection {
+	background: lighten($orange, 5%);
+	opacity: 0.8;
+	color: $white;
+	text-shadow: 0 0 1px $black;
+}
+
+::moz-selection {
+	background: lighten($orange, 5%);
+	opacity: 0.8;
+	color: $white;
+	text-shadow: 0 0 1px $black;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+	@include media($mobile){
+		font-size: 16px !important;
+	}
+}
+
+.my_row {
+	width: 100%;
+	float: left;
+	display: block;
+}
+
+.button {
+	display: block;
+	padding: 15px 30px 10px;
+	font-size: 18px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+
+	@include media($mobile) {
+		font-size: 16px;
+	}
+
+	&.blue {
+		background: $cyan;
+		color: $black;
+
+		&:hover {
+			background: $darkCyan;
+		}
+	}
+}
+
+.hero {
+
+	&:before {
+		content: '';
+		background: rgba(255,255,255,.5);
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.text_wrap {
+		text-align: center;
+		padding: 10% 0;
+
+		h1 {
+			font-size: 4.5em;
+
+			@include media($tablet) {
+				font-size: 3.5em
+			}
+
+			@include media($mobile) {
+				font-size: 2.1em
+			}
+
+			span {
+				color: $black;
+			}
+		}
+
+		h2 {
+			font-size: 3.5em;
+
+			@include media($tablet) {
+				font-size: 2.8em
+			}
+
+			@include media($mobile) {
+				font-size: 2em
+			}
+		}
+
+		p {
+			font-size: 28px;
+			margin: 20px 0 40px;
+			color: $black;
+			line-height: 1.4;
+
+			@include media($tablet) {
+				font-size: 1.4em;
+			}
+
+			@include media($mobile) {
+				font-size: 1.2em;
+				margin: 10px 0 20px;
+			}
+		}
+
+		.button {
+			display: inline-block;
+			padding: 20px 40px;
+
+			@include media($mobile) {
+				padding: 15px 30px;
+			}
+		}
+	}
+}
+
+.number_box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	-webkit-justify-content: flex-end;
+	align-items: center;
+	-webkit-align-items: center;
+
+	img {
+		width: 30px;
+		margin-right: 10px;
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition:  all 1s ease-in-out;
+		-o-transition:  all 1s ease-in-out;
+		transition:  all 1s ease-in-out;
+
+		@include media($tablet) {
+			width: 25px;
+		}
+	}
+
+	h3 {
+		margin: 0;
+		padding-top: 8px;
+	}
+
+	a {
+		color: $darkBlue;
+		line-height: 1;
+
+		&:not(.button) {
+			font-size: 28px;
+		}
+	}
+
+	&.alt {
+		background-color: $darkCyan;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 10px 20px;
+		z-index: 1;
+
+		a {
+			color: $white;
+
+			@include media($tablet) {
+				font-size: 24px;
+			}
+
+			@include media($mobile) {
+				font-size: 18px;
+			}
+		}
+
+		img {
+
+			@include media($tablet) {
+				max-width: 22px;
+			}
+
+			@include media($mobile) {
+				max-width: 20px;
+			}
+		}
+	}
+}
+
+img.custom, .custom img {
+	border-top-left-radius: 50px !important;
+	border-bottom-right-radius: 50px !important;
+	-webkit-border-top-left-radius: 50px !important;
+	-webkit-border-bottom-right-radius: 50px !important;
+}

@@ -1,0 +1,139 @@
+footer {
+    background: $cyan;
+    padding: 100px 0;
+
+    @include media($mobile) {
+        padding: 50px 0;
+    }
+
+    .three_col_section {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+
+        @include media($mobile) {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            color: $darkBlue;
+
+            @include media($mobile) {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+
+            h3 {
+                @include popmed;
+                font-size: 24px;
+                margin-bottom: 25px;
+
+                @include media($tablet) {
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+
+                @include media($tablet) {
+                    font-size: 16px;
+                }
+            }
+
+            ul {
+                padding-left: 0;
+                margin: 0;
+
+                li {
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    @include proxreg;
+                    color: $darkBlue;
+                    font-size: 18px;
+                }
+            }
+
+            .contact_info {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                -webkit-justify-content: flex-start;
+                align-items: center;
+                -webkit-align-items: center;
+                gap: 10px;
+                column-gap: 10px;
+                -webkit-column-gap: 10px;
+                -moz-column-gap: 10px;
+                margin-bottom: 15px;
+                margin-top: 40px;
+
+                @include media($mobile) {
+                    justify-content: center;
+                    -webkit-justify-content: center;
+                }
+
+                &:last-child {
+                    margin-top: 0;
+                }
+
+                img {
+                    @include media($tablet) {
+                        width: 20px;
+                    }
+                }
+
+                h3 {
+                    margin: 0;
+
+                    @include media($tablet) {
+                        font-size: 16px;
+                    }
+
+                    a {
+                        color: $darkBlue;
+
+                        &.email {
+                            @include proxreg;
+                            font-size: 20px;
+                        }
+
+                        &.phone {
+                            font-size: 30px;
+
+                            @include media($tablet) {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .copy {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+}

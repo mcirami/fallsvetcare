@@ -1,0 +1,76 @@
+.page_template {
+
+    .hero {
+
+        .text_wrap {
+            padding: 12% 0;
+
+            @include media($mobile) {
+                padding: 16% 0;
+            }
+        }
+    }
+
+    .two_columns {
+        padding: 80px;
+
+        @include media($tablet) {
+            padding: 40px;
+        }
+
+        .two_col_row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+
+            @include media($tablet) {
+                -ms-flex-wrap: wrap-reverse;
+                flex-wrap: wrap-reverse;
+            }
+        }
+
+        .column  {
+            width: 52%;
+
+            @include media($tablet) {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            &:first-child {
+                width: 48%;
+                padding-right: 2.5%;
+
+                @include media($tablet) {
+                    width: 100%;
+                    padding-right: 0;
+                }
+            }
+
+            &:last-child {
+                padding-left: 2.5%;
+
+                @include media($tablet) {
+                    padding-left: 0;
+                }
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 1.8;
+                margin-bottom: 40px;
+
+                @include media($mobile) {
+                    margin-bottom: 20px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
