@@ -66,68 +66,6 @@ footer:not(.comment-meta) {
                     font-size: 18px;
                 }
             }
-
-            .contact_info {
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-orient: horizontal;
-                -webkit-box-direction: normal;
-                -ms-flex-direction: row;
-                flex-direction: row;
-                -ms-flex-wrap: nowrap;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                -webkit-justify-content: flex-start;
-                align-items: center;
-                -webkit-align-items: center;
-                gap: 10px;
-                column-gap: 10px;
-                -webkit-column-gap: 10px;
-                -moz-column-gap: 10px;
-                margin-bottom: 15px;
-                margin-top: 40px;
-
-                @include media($mobile) {
-                    justify-content: center;
-                    -webkit-justify-content: center;
-                }
-
-                &:last-child {
-                    margin-top: 0;
-                }
-
-                img {
-                    @include media($tablet) {
-                        width: 20px;
-                    }
-                }
-
-                h3 {
-                    margin: 0;
-
-                    @include media($tablet) {
-                        font-size: 16px;
-                    }
-
-                    a {
-                        color: $darkBlue;
-
-                        &.email {
-                            @include proxreg;
-                            font-size: 20px;
-                        }
-
-                        &.phone {
-                            font-size: 30px;
-
-                            @include media($tablet) {
-                                font-size: 20px;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 
@@ -135,5 +73,67 @@ footer:not(.comment-meta) {
         text-align: center;
         margin-top: 40px;
     }
+}
 
+.contact_info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    align-items: center;
+    -webkit-align-items: center;
+    gap: 10px;
+    column-gap: 10px;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 40px;
+
+    @include media($mobile) {
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+
+    &:last-child {
+        margin-top: 0;
+    }
+
+    img {
+        @include media($tablet) {
+            width: 20px;
+        }
+    }
+
+    h3 {
+        margin: 0 !important;
+
+        @include media($tablet) {
+            font-size: 16px;
+        }
+
+        a {
+            color: $darkBlue;
+
+
+            &.email {
+                @include proxreg;
+                font-size: 20px;
+            }
+
+            &.phone {
+                font-size: 30px;
+
+                @include media($tablet) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
 }

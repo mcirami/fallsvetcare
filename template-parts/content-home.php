@@ -9,9 +9,8 @@
 			<?php echo $middle['description']; ?>
 		</p>
 	</article>
-	<!--style="background: url(<?php /*echo get_template_directory_uri() . "/images/welcome-image.jpg" */?>) no-repeat; background-size: cover;"-->
 	<article class="image_col column">
-		<img src="<?php echo get_template_directory_uri() . "/images/welcome-image.jpg" ?>" alt="">
+		<img src="<?php echo $middle['image']; ?>" alt="">
 	</article>
 
 </section>

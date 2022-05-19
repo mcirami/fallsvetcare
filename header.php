@@ -38,7 +38,7 @@
 				<div class="header_columns">
 					<?php if (is_front_page() ) : ?>
 						<div class="number_box top w-100 d-flex d-md-none">
-							<a class="button blue" href="#">Contact Us</a>
+							<a class="button blue" href="/contact-us">Contact Us</a>
 							<span>
 								<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
 							</span>
@@ -68,7 +68,7 @@
 					<div class="link_column">
 						<?php if (is_front_page() ) : ?>
 							<div class="my_row number_box top d-none d-md-flex">
-								<a class="button blue" href="#">Contact Us</a>
+								<a class="button blue" href="/contact-us">Contact Us</a>
 								<span>
 									<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
 								</span>

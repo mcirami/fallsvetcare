@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="three_col_section">
 				<div class="column">
-					<h3>Navarre Veterinary Clinic</h3>
+					<h3>Navarre Beach Veterinary Clinic</h3>
 					<?php
 					wp_nav_menu(
 						array(
@@ -57,7 +57,7 @@
 				</div>
 			</div>
 			<div class="copy">
-				<p>&copy; 2022 Navarre Veterinary Clinic</p>
+				<p>&copy; 2022 Navarre Beach Veterinary Clinic</p>
 			</div>
 		</div>
 	</footer><!-- #colophon -->

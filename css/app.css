@@ -12493,6 +12493,83 @@ header.scroll .header_columns .bottom a {
   font-size: 2em;
 }
 
+.contact .two_columns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+@media screen and (max-width: 991px) {
+  .contact .two_columns {
+    flex-wrap: wrap;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.contact .two_columns .column {
+  width: 50%;
+  padding: 0 5.5%;
+}
+@media screen and (max-width: 1199px) {
+  .contact .two_columns .column {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contact .two_columns .column {
+    width: 100% !important;
+  }
+}
+.contact .two_columns .column:first-child {
+  border-right: 1px solid #92d8e2;
+}
+@media screen and (max-width: 991px) {
+  .contact .two_columns .column:first-child {
+    border-right: none;
+  }
+}
+.contact .two_columns .column:last-child {
+  padding-left: 5.5%;
+}
+@media screen and (max-width: 1199px) {
+  .contact .two_columns .column:last-child {
+    padding-left: 2.5%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contact .two_columns .column:last-child {
+    padding-left: 0;
+  }
+}
+.contact .two_columns .column h2, .contact .two_columns .column .h2 {
+  font-size: 30px;
+}
+.contact .two_columns .column p {
+  margin-bottom: 0;
+}
+.contact .two_columns .column .contact_info {
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+.contact .two_columns button {
+  font-family: "proxima-nova-semibold", sans-serif;
+  font-weight: 500;
+  padding: 10px 30px 10px !important;
+  font-size: 18px !important;
+  background: #92d8e2 !important;
+  color: #0c0c0c !important;
+}
+@media screen and (max-width: 767px) {
+  .contact .two_columns button {
+    font-size: 16px !important;
+  }
+}
+.contact .two_columns button:hover {
+  background: #16afbf !important;
+}
+
 footer:not(.comment-meta) {
   background: #92d8e2;
   padding: 100px 0;
@@ -12556,7 +12633,12 @@ footer:not(.comment-meta) .three_col_section .column ul a {
   color: #16373b;
   font-size: 18px;
 }
-footer:not(.comment-meta) .three_col_section .column .contact_info {
+footer:not(.comment-meta) .copy {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact_info {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -12572,44 +12654,40 @@ footer:not(.comment-meta) .three_col_section .column .contact_info {
   margin-top: 40px;
 }
 @media screen and (max-width: 767px) {
-  footer:not(.comment-meta) .three_col_section .column .contact_info {
+  .contact_info {
     justify-content: center;
     -webkit-justify-content: center;
   }
 }
-footer:not(.comment-meta) .three_col_section .column .contact_info:last-child {
+.contact_info:last-child {
   margin-top: 0;
 }
 @media screen and (max-width: 991px) {
-  footer:not(.comment-meta) .three_col_section .column .contact_info img {
+  .contact_info img {
     width: 20px;
   }
 }
-footer:not(.comment-meta) .three_col_section .column .contact_info h3, footer:not(.comment-meta) .three_col_section .column .contact_info .h3 {
-  margin: 0;
+.contact_info h3, .contact_info .h3 {
+  margin: 0 !important;
 }
 @media screen and (max-width: 991px) {
-  footer:not(.comment-meta) .three_col_section .column .contact_info h3, footer:not(.comment-meta) .three_col_section .column .contact_info .h3 {
+  .contact_info h3, .contact_info .h3 {
     font-size: 16px;
   }
 }
-footer:not(.comment-meta) .three_col_section .column .contact_info h3 a, footer:not(.comment-meta) .three_col_section .column .contact_info .h3 a {
+.contact_info h3 a, .contact_info .h3 a {
   color: #16373b;
 }
-footer:not(.comment-meta) .three_col_section .column .contact_info h3 a.email, footer:not(.comment-meta) .three_col_section .column .contact_info .h3 a.email {
+.contact_info h3 a.email, .contact_info .h3 a.email {
   font-family: "proxima-nova-reg", sans-serif;
   font-weight: 300;
   font-size: 20px;
 }
-footer:not(.comment-meta) .three_col_section .column .contact_info h3 a.phone, footer:not(.comment-meta) .three_col_section .column .contact_info .h3 a.phone {
+.contact_info h3 a.phone, .contact_info .h3 a.phone {
   font-size: 30px;
 }
 @media screen and (max-width: 991px) {
-  footer:not(.comment-meta) .three_col_section .column .contact_info h3 a.phone, footer:not(.comment-meta) .three_col_section .column .contact_info .h3 a.phone {
+  .contact_info h3 a.phone, .contact_info .h3 a.phone {
     font-size: 20px;
   }
-}
-footer:not(.comment-meta) .copy {
-  text-align: center;
-  margin-top: 40px;
 }
