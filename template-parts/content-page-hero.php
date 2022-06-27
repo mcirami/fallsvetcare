@@ -3,7 +3,7 @@
 
 ?>
 
-<section class="hero my_row" style="background: url(<?php echo $bgImage; ?>) no-repeat; background-size: cover; background-position: center;">
+<section class="hero my_row <?php if ($bgImage == null) { echo "no_bg"; } ?>" style="background: url(<?php echo $bgImage; ?>) no-repeat; background-size: cover; background-position: center;">
 	<div class="container">
 		<div class="number_box alt">
 			<span>

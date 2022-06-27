@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.mobile_menu_icon').click(function(e){
-		//e.preventDefault();
+		e.preventDefault();
 		if ($(this).hasClass('open')) {
 			document.querySelector('.menu_wrap.mobile').style.top =  "-" + menu.clientHeight + "px";
 		} else {

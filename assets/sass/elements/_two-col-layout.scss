@@ -9,6 +9,22 @@
                 padding: 16% 0;
             }
         }
+
+        &.no_bg {
+            background: $lightBlue !important;
+
+            .text_wrap {
+                padding: 3% 0;
+
+                @include media($mobile) {
+                    padding: 3% 0;
+                }
+            }
+
+            .number_box {
+                display: none;
+            }
+        }
     }
 
     .two_columns {

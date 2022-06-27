@@ -279,3 +279,7 @@ img.custom, .custom img {
 	-webkit-border-top-left-radius: 50px !important;
 	-webkit-border-bottom-right-radius: 50px !important;
 }
+
+.DayPicker-Months, .DayPicker-Month, .DayPicker-Caption, .DayPicker-Caption > div {
+	position: unset;
+}

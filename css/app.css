@@ -11587,6 +11587,10 @@ img.custom, .custom img {
   -webkit-border-bottom-right-radius: 50px !important;
 }
 
+.DayPicker-Months, .DayPicker-Month, .DayPicker-Caption, .DayPicker-Caption > div {
+  position: unset;
+}
+
 @font-face {
   font-family: "poppins-medium";
   src: url("fonts/poppins-medium-webfont.eot"), url("fonts/poppins-medium-webfont.ttf") format("truetype"), url("fonts/poppins-medium-webfont.woff") format("woff"), url("fonts/poppins-medium-webfont.woff2") format("woff2"), url("fonts/poppins-medium-webfont.svg#poppinsmedium") format("svg");
@@ -12084,6 +12088,20 @@ header.scroll .header_columns .bottom a {
   .page_template .hero .text_wrap {
     padding: 16% 0;
   }
+}
+.page_template .hero.no_bg {
+  background: #e8edf4 !important;
+}
+.page_template .hero.no_bg .text_wrap {
+  padding: 3% 0;
+}
+@media screen and (max-width: 767px) {
+  .page_template .hero.no_bg .text_wrap {
+    padding: 3% 0;
+  }
+}
+.page_template .hero.no_bg .number_box {
+  display: none;
 }
 .page_template .two_columns {
   padding: 80px;
