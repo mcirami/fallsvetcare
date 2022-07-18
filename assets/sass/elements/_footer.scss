@@ -75,6 +75,25 @@ footer:not(.comment-meta) {
     }
 }
 
+.social_media {
+    margin-top: 40px;
+
+    @include media($mobile) {
+        text-align: center;
+    }
+
+    a {
+        display:inline-block;
+    }
+
+    img {
+        width: 40px;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+    }
+}
+
 .contact_info {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -93,8 +112,7 @@ footer:not(.comment-meta) {
     column-gap: 10px;
     -webkit-column-gap: 10px;
     -moz-column-gap: 10px;
-    margin-bottom: 15px;
-    margin-top: 40px;
+    margin: 15px 0;
 
     @include media($mobile) {
         justify-content: center;
@@ -106,6 +124,8 @@ footer:not(.comment-meta) {
     }
 
     img {
+        width: 30px;
+
         @include media($tablet) {
             width: 20px;
         }

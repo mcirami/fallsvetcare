@@ -38,11 +38,16 @@
 				<div class="header_columns">
 					<?php if (is_front_page() ) : ?>
 						<div class="number_box top w-100 d-flex d-md-none">
+							<a target="_blank" href="https://www.facebook.com/dr.ginabauman">
+								<img class="facebook" src="<?php echo get_template_directory_uri() . "/images/icon-facebook.png"?>" alt="">
+							</a>
+							<div class="phone_wrap">
+								<span>
+									<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
+								</span>
+								<h3><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></h3>
+							</div>
 							<a class="button blue" href="/contact-us">Contact Us</a>
-							<span>
-								<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
-							</span>
-							<h3><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></h3>
 						</div>
 					<?php endif; ?>
 					<div class="site-branding">
@@ -68,11 +73,16 @@
 					<div class="link_column">
 						<?php if (is_front_page() ) : ?>
 							<div class="my_row number_box top d-none d-md-flex">
+								<div class="phone_wrap">
+									<span>
+										<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
+									</span>
+									<h3><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></h3>
+								</div>
+								<a target="_blank" href="https://www.facebook.com/dr.ginabauman">
+									<img class="facebook" src="<?php echo get_template_directory_uri() . "/images/icon-facebook.png"?>" alt="">
+								</a>
 								<a class="button blue" href="/contact-us">Contact Us</a>
-								<span>
-									<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
-								</span>
-								<h3><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></h3>
 							</div>
 						<?php endif; ?>
 						<nav id="site-navigation" class="main-navigation my_row header_right bottom">

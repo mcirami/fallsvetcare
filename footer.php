@@ -42,10 +42,13 @@
 					<p><?php echo $address['line_1']; ?></p>
 					<p><?php echo $address['line_2']; ?></p>
 					<p><?php echo $address['line_3']; ?></p>
+					<div class="social_media">
+						<a target="_blank" href="https://www.facebook.com/dr.ginabauman">
+							<img class="facebook" src="<?php echo get_template_directory_uri() . "/images/icon-facebook-footer.png"?>" alt="">
+						</a>
+					</div>
 					<div class="contact_info">
-						<span>
-							<img src="<?php echo get_template_directory_uri() . "/images/icon-envelope.png"?>" alt="">
-						</span>
+						<img src="<?php echo get_template_directory_uri() . "/images/icon-envelope.png"?>" alt="">
 						<h3><a class="email" href="mailto:<?php the_field('email', 'options');?>"><?php the_field('email', 'options');?></a></h3>
 					</div>
 					<div class="contact_info">

@@ -223,17 +223,39 @@ header {
                 margin-bottom: 10px;
                 padding-bottom: 10px;
                 border-bottom: 1px solid $cyan;
-                justify-content: center;
-                -webkit-justify-content: center;
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
             }
 
             .button {
-                margin-right: 20px;
+                -webkit-transition: padding 1s ease-in-out;
+                -moz-transition:  padding 1s ease-in-out;
+                -o-transition:  padding 1s ease-in-out;
+                transition:  padding 1s ease-in-out;
 
                 @include media($tablet) {
                     font-size: 16px;
-                    padding: 8px 25px 5px;
+                    padding: 15px 25px 10px;
                 }
+
+                @include media($mobile) {
+                    padding: 15px 10px 10px;
+                }
+            }
+
+            .phone_wrap {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                align-items: center;
+                -webkit-align-items: center;
+                margin-right: 20px;
             }
 
             span {
@@ -242,6 +264,18 @@ header {
                     @include media($mobile) {
                         width: 20px;
                     }
+                }
+            }
+
+            .facebook {
+                width: 43px;
+                border-radius: 4px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                margin-right: 20px;
+
+                @include media($tablet) {
+                    width: 41px;
                 }
             }
 
@@ -323,6 +357,14 @@ header {
 
                 a:not(.button) {
                     font-size: 20px;
+                }
+
+                .facebook {
+                    width: 36px;
+                }
+
+                .button {
+                    padding: 12px 25px 7px;
                 }
             }
 

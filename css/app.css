@@ -11839,22 +11839,47 @@ header .header_columns .top {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #92d8e2;
-    justify-content: center;
-    -webkit-justify-content: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
   }
 }
 header .header_columns .top .button {
-  margin-right: 20px;
+  transition: padding 1s ease-in-out;
 }
 @media screen and (max-width: 991px) {
   header .header_columns .top .button {
     font-size: 16px;
-    padding: 8px 25px 5px;
+    padding: 15px 25px 10px;
   }
+}
+@media screen and (max-width: 767px) {
+  header .header_columns .top .button {
+    padding: 15px 10px 10px;
+  }
+}
+header .header_columns .top .phone_wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  -webkit-align-items: center;
+  margin-right: 20px;
 }
 @media screen and (max-width: 767px) {
   header .header_columns .top span img {
     width: 20px;
+  }
+}
+header .header_columns .top .facebook {
+  width: 43px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  margin-right: 20px;
+}
+@media screen and (max-width: 991px) {
+  header .header_columns .top .facebook {
+    width: 41px;
   }
 }
 header .header_columns .top h3, header .header_columns .top .h3 {
@@ -11921,6 +11946,12 @@ header.scroll .header_columns .top img {
 }
 header.scroll .header_columns .top a:not(.button) {
   font-size: 20px;
+}
+header.scroll .header_columns .top .facebook {
+  width: 36px;
+}
+header.scroll .header_columns .top .button {
+  padding: 12px 25px 7px;
 }
 header.scroll .header_columns .bottom a {
   font-size: 16px;
@@ -12656,6 +12687,24 @@ footer:not(.comment-meta) .copy {
   margin-top: 40px;
 }
 
+.social_media {
+  margin-top: 40px;
+}
+@media screen and (max-width: 767px) {
+  .social_media {
+    text-align: center;
+  }
+}
+.social_media a {
+  display: inline-block;
+}
+.social_media img {
+  width: 40px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
 .contact_info {
   display: flex;
   flex-direction: row;
@@ -12668,8 +12717,7 @@ footer:not(.comment-meta) .copy {
   column-gap: 10px;
   -webkit-column-gap: 10px;
   -moz-column-gap: 10px;
-  margin-bottom: 15px;
-  margin-top: 40px;
+  margin: 15px 0;
 }
 @media screen and (max-width: 767px) {
   .contact_info {
@@ -12679,6 +12727,9 @@ footer:not(.comment-meta) .copy {
 }
 .contact_info:last-child {
   margin-top: 0;
+}
+.contact_info img {
+  width: 30px;
 }
 @media screen and (max-width: 991px) {
   .contact_info img {
