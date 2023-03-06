@@ -1,5 +1,3 @@
-'use strict'
-
 jQuery(document).ready(function($) {
 
 	$(window).on('scroll', function (e) {
@@ -30,6 +28,35 @@ jQuery(document).ready(function($) {
 
 		$(this).toggleClass('open');
 		$('.menu_wrap.mobile').toggleClass('open');
+	});
+
+	$(window).on('load', function() {
+		const swiperDiv = document.querySelector('.swiper');
+
+		if (swiperDiv) {
+
+			const swiper = new Swiper('.swiper', {
+				// Optional parameters
+				direction: 'horizontal',
+				loop: true,
+				autoHeight: true,
+
+				// If we need pagination
+				pagination: {
+					el: '.swiper-pagination',
+				},
+
+				autoplay: {
+					delay: 5000,
+				},
+
+				// Navigation arrows
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+		}
 	});
 
 });

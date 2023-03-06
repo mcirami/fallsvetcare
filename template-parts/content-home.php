@@ -30,60 +30,48 @@
 				<?php  echo $about['description']; ?>
 			</div>
 		</div>
-		<article>
-			<!--<ul class="nav nav-tabs" id="myTab" role="tablist">
-				<?php /*if ( have_rows( 'about_section' ) ) :
-					$count = 0;
-					*/?>
-					<?php /*while ( have_rows( 'about_section' ) ) : the_row();
-						++$count;
-						$originalName = get_sub_field('name');
-						$array = array(".", ",", " ");
-						$name = str_replace($array, "-", $originalName);
 
-					*/?>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link <?php /*if ($count == 1) { echo "active"; } */?>"
-							        id="<?php /*echo $name; */?>-tab"
-							        data-bs-toggle="tab"
-							        data-bs-target="#about-<?php /*echo $name; */?>"
-							        type="button"
-							        role="tab"
-							        aria-controls="about-<?php /*echo $name; */?>"
-							        aria-selected="true">
-								<?php /*echo $originalName; */?>
-							</button>
-						</li>
-
-					<?php /*endwhile; */?>
-				<?php /*endif; */?>
-			</ul>
-			<div class="tab-content" id="myTabContent">
-				<?php /*if ( have_rows( 'about_section' ) ) :
-						$count = 0;
-					*/?>
-					<?php /*while ( have_rows( 'about_section' ) ) : the_row();
-						++$count;
-						$originalName = get_sub_field('name');
-						$array = array(".", ",", " ");
-						$name = str_replace($array, "-", $originalName);
-					*/?>
-						<div class="tab-pane fade show <?php /*if ($count == 1) { echo "active"; } */?>"
-						     id="about-<?php /*echo $name; */?>"
-						     role="tabpanel"
-						     aria-labelledby="<?php /*echo $name; */?>-tab">
-							<div class="my_row">
-								<div class="image_col">
-									<img class="custom" src="<?php /*the_sub_field('image'); */?>" alt="">
-								</div>
-								<div class="text_col">
-									<?php /*the_sub_field('description') */?>
-								</div>
-							</div>
-						</div>
-					<?php /*endwhile; */?>
-				--><?php /*endif; */?>
-		</article>
 	</div>
 
 </section>
+
+
+<?php if ( have_rows( 'review_slider' ) ) : ?>
+	<section class="my_row review_slider">
+		<div class="container">
+			<h3><?php the_field('review_section_title'); ?></h3>
+			<!-- Slider main container -->
+			<div class="swiper">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+
+					<!-- Slides -->
+					<?php while ( have_rows( 'review_slider' ) ) : the_row();
+						$starsCount = get_sub_field( 'stars' );
+						?>
+						<div class="swiper-slide">
+							<div class="content_wrap">
+								<h4><?php the_sub_field('name');?></h4>
+								<div class="stars_row">
+									<?php
+									for($x = 1; $x <= $starsCount; $x++ ) {
+										echo "<img src=" . get_template_directory_uri() . "/images/review-star.png alt='star' />";
+									}
+									?>
+								</div>
+								<p><?php the_sub_field('review_text');?></p>
+							</div>
+						</div>
+					<?php endwhile; ?>
+
+				</div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
+
+				<!-- If we need navigation buttons -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</div>
+	</section>
+<?php endif; ?>
