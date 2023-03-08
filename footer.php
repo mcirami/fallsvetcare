@@ -26,13 +26,30 @@
 					?>
 				</div>
 				<div class="column">
-					<h3>Center Hours</h3>
 					<?php
 					$hours = get_field('office_hours', 'options');
 					?>
-					<p>Monday-Friday: <?php echo $hours['monday-friday']; ?></p>
-					<p>Saturday: <?php echo $hours['saturday']; ?></p>
-					<p>Sunday: <?php echo $hours['sunday']; ?></p>
+
+					<?php if ( have_rows( 'office_hours', 'options' ) ) : ?>
+						<?php while ( have_rows( 'office_hours', 'options' ) ) : the_row(); ?>
+							<div class="heading_wrap mb-4">
+								<h3 class="mb-0"><?php the_sub_field('column_title'); ?></h3>
+								<?php if(get_sub_field('sub_title')) : ?>
+									<small><?php the_sub_field('sub_title'); ?></small>
+								<?php endif; ?>
+							</div>
+
+							<?php if ( have_rows( 'days' ) ) : ?>
+								<?php while ( have_rows( 'days' ) ) : the_row(); ?>
+									<p>
+										<?php the_sub_field('day');?>
+										<?php the_sub_field('hours');?>
+									</p>
+								<?php endwhile; ?>
+							<?php endif; ?>
+						<?php endwhile; ?>
+					<?php endif; ?>
+
 				</div>
 				<div class="column">
 					<h3>Reach Us</h3>
