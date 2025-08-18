@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Navarre_Veterinary_Clinic
+ * @package Falls_Vet_Care
  */
 
 ?>
@@ -34,7 +34,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'navarrevetclinic' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'fallsvetcare' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="container">
@@ -69,10 +69,10 @@
 							</a>
 							<?php
 						endif;
-						$navarrevetclinic_description = get_bloginfo( 'description', 'display' );
-						if ( $navarrevetclinic_description || is_customize_preview() ) :
+						$fallsvetcare_description = get_bloginfo( 'description', 'display' );
+						if ( $fallsvetcare_description || is_customize_preview() ) :
 							?>
-							<p class="site-description"><?php echo $navarrevetclinic_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+							<p class="site-description"><?php echo $fallsvetcare_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 						<?php endif; ?>
 					</div><!-- .site-branding -->
 					<div class="link_column">

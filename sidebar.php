@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Navarre_Veterinary_Clinic
+ * @package Falls_Vet_Care
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

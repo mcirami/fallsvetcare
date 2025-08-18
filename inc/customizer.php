@@ -1,8 +1,8 @@
 <?php
 /**
- * Navarre Veterinary Clinic Theme Customizer
+ * Falls Vet Care Theme Customizer
  *
- * @package Navarre_Veterinary_Clinic
+ * @package Falls_Vet_Care
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function navarrevetclinic_customize_register( $wp_customize ) {
+function fallsvetcare_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -20,26 +20,26 @@ function navarrevetclinic_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'navarrevetclinic_customize_partial_blogname',
+				'render_callback' => 'fallsvetcare_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'navarrevetclinic_customize_partial_blogdescription',
+				'render_callback' => 'fallsvetcare_customize_partial_blogdescription',
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'navarrevetclinic_customize_register' );
+add_action( 'customize_register', 'fallsvetcare_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function navarrevetclinic_customize_partial_blogname() {
+function fallsvetcare_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -48,14 +48,14 @@ function navarrevetclinic_customize_partial_blogname() {
  *
  * @return void
  */
-function navarrevetclinic_customize_partial_blogdescription() {
+function fallsvetcare_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function navarrevetclinic_customize_preview_js() {
-	wp_enqueue_script( 'navarrevetclinic-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
+function fallsvetcare_customize_preview_js() {
+	wp_enqueue_script( 'fallsvetcare-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
-add_action( 'customize_preview_init', 'navarrevetclinic_customize_preview_js' );
+add_action( 'customize_preview_init', 'fallsvetcare_customize_preview_js' );

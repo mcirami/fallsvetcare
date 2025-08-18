@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Navarre_Veterinary_Clinic
+ * @package Falls_Vet_Care
  */
 
 ?>
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				navarrevetclinic_posted_on();
-				navarrevetclinic_posted_by();
+				fallsvetcare_posted_on();
+				fallsvetcare_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php navarrevetclinic_post_thumbnail(); ?>
+	<?php fallsvetcare_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'navarrevetclinic' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'fallsvetcare' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'navarrevetclinic' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fallsvetcare' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +58,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php navarrevetclinic_entry_footer(); ?>
+		<?php fallsvetcare_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Navarre_Veterinary_Clinic
+ * @package Falls_Vet_Care
  */
 
 /*
@@ -28,18 +28,18 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$navarrevetclinic_comment_count = get_comments_number();
-			if ( '1' === $navarrevetclinic_comment_count ) {
+			$fallsvetcare_comment_count = get_comments_number();
+			if ( '1' === $fallsvetcare_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'navarrevetclinic' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'fallsvetcare' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $navarrevetclinic_comment_count, 'comments title', 'navarrevetclinic' ) ),
-					number_format_i18n( $navarrevetclinic_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $fallsvetcare_comment_count, 'comments title', 'fallsvetcare' ) ),
+					number_format_i18n( $fallsvetcare_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
@@ -65,7 +65,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'navarrevetclinic' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'fallsvetcare' ); ?></p>
 			<?php
 		endif;
 
