@@ -184,6 +184,7 @@ header {
             @include media($smallMobile) {
                 width: auto;
                 gap: 5px;
+                flex-direction: column;
             }
 
              a {
