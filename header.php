@@ -37,24 +37,37 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'fallsvetcare' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<div class="header_top">
+			<div class="container">
+				<div class="d-flex align-items-center justify-content-between">
+					<div class="phone_wrap d-flex justify-content-start number_box">
+						<span>
+							<img src="<?php echo get_template_directory_uri() . "/images/icon-phone-blue.png"?>" alt="">
+						</span>
+						<p><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></p>
+					</div>
+					<div class="social_media">
+						<?php if( have_rows('social_media', 'options') ): ?>
+							<?php while( have_rows('social_media', 'options') ): the_row(); ?>
+									<a class="icon" target="_blank" href="<?php the_sub_field('social_media_url');?>">
+										<?php $image =  get_sub_field('social_media_icon');?>
+										<img src="<?php echo $image['url'];?>" alt="">
+									</a>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
+					<div class="phone_wrap d-flex justify-content-end number_box">
+						<span>
+							<img src="<?php echo get_template_directory_uri() . "/images/sms-icon.png"?>" alt="">
+						</span>
+						<p><a href="sms:<?php the_field('phone_number_two', 'options');?>"><?php the_field('phone_number_two', 'options');?></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 			<div class="my_row">
-
 				<div class="header_columns">
-					<?php if (is_front_page() ) : ?>
-						<div class="number_box top w-100 d-flex d-md-none">
-							<a target="_blank" href="https://www.facebook.com/dr.ginabauman">
-								<img class="facebook" src="<?php echo get_template_directory_uri() . "/images/icon-facebook.png"?>" alt="">
-							</a>
-							<div class="phone_wrap">
-								<span>
-									<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
-								</span>
-								<h3><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></h3>
-							</div>
-							<a class="button blue" href="/contact-us">Contact Us</a>
-						</div>
-					<?php endif; ?>
 					<div class="site-branding">
 						<?php
 						the_custom_logo();
@@ -65,7 +78,7 @@
 						else :
 							?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-								<img src="<?php echo get_template_directory_uri() . "/images/logo.jpg"?>" alt="">
+								<img src="<?php echo get_template_directory_uri() . "/images/logo.png"?>" alt="">
 							</a>
 							<?php
 						endif;
@@ -76,20 +89,6 @@
 						<?php endif; ?>
 					</div><!-- .site-branding -->
 					<div class="link_column">
-						<?php if (is_front_page() ) : ?>
-							<div class="my_row number_box top d-none d-md-flex">
-								<div class="phone_wrap">
-									<span>
-										<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
-									</span>
-									<h3><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></h3>
-								</div>
-								<a target="_blank" href="https://www.facebook.com/dr.ginabauman">
-									<img class="facebook" src="<?php echo get_template_directory_uri() . "/images/icon-facebook.png"?>" alt="">
-								</a>
-								<a class="button blue" href="/contact-us">Contact Us</a>
-							</div>
-						<?php endif; ?>
 						<nav id="site-navigation" class="main-navigation my_row header_right bottom">
 							<div class="toggler" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
 								<a class="mobile_menu_icon" href="#">
@@ -98,7 +97,7 @@
 									<span></span>
 								</a>
 							</div>
-							<div class="menu_wrap d-none d-lg-block">
+							<div class="menu_wrap d-none d-sm-block">
 								<?php
 								wp_nav_menu(
 									array(
@@ -110,11 +109,20 @@
 							</div>
 						</nav><!-- #site-navigation -->
 					</div>
+					<div class="number_box d-none d-md-flex">
+						<div class="address_wrap">
+							<?php $address = get_field('address', 'options'); ?>
+							<p>
+								<?php echo $address['line_2']; ?> <br/>
+								<?php  echo $address['line_3']; ?>
+							</p>
+						</div>
+					</div>
 				</div><!-- header_columns -->
 			</div>
 		</div>
 	</header><!-- #masthead -->
-	<div class="menu_wrap mobile d-block d-lg-none">
+	<div class="menu_wrap mobile d-block d-md-none">
 		<?php
 		wp_nav_menu(
 			array(
@@ -123,4 +131,13 @@
 			)
 		);
 		?>
+		<div class="d-flex justify-content-center align-items-center text-center py-4">
+			<div class="address_wrap">
+				<?php $address = get_field('address', 'options'); ?>
+				<p>
+					<?php echo $address['line_2']; ?> <br/>
+					<?php  echo $address['line_3']; ?>
+				</p>
+			</div>
+		</div>
 	</div>

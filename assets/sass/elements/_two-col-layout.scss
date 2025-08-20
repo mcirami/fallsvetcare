@@ -27,14 +27,141 @@
         }
     }
 
-    .two_columns {
-        padding: 80px;
+    .two_column_layout {
+        padding: 60px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        width: 100%;
 
-        @include media($tablet) {
-            padding: 40px;
+        // ===== Card container + accent bar =====
+        .bio-card {
+            position: relative;
+            border-radius: 24px;
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .06);
+            padding: clamp(20px, 3vw, 40px);
+
+            // subtle left accent bar
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0 auto 0 0;
+                width: 6px;
+                background: $cyan;
+            }
+
+            // spacing between columns on desktop
+            .text_col {
+                padding-inline: clamp(12px, 2.5vw, 32px);
+            }
+
+            .image_col {
+                padding-inline: clamp(12px, 2.5vw, 32px);
+            }
+
+            // when image is left or right, let text breathe to the opposite side
+            &.image-right {
+                @include media($tablet) {
+                    flex-wrap: wrap-reverse;
+                }
+
+                .text_col {
+                    padding-right: clamp(24px, 6vw, 100px);
+                }
+            }
+
+
+
+
+            &.image-left .text_col {
+                padding-left: clamp(24px, 6vw, 100px);
+            }
         }
 
+        // ===== Image presentation (frame + badge) =====
+        .img-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;
+                // soft inner outline
+                outline: 1px solid rgba($cyan, .18);
+                outline-offset: -8px;
+                border-radius: 20px;
+            }
+
+            .img-badge {
+                position: absolute;
+                top: 14px;
+                right: 14px;
+                background: $cyan;
+                color: #fff;
+                padding: .35rem .6rem;
+                border-radius: 999px;
+                font-weight: 600;
+                font-size: .9rem;
+                box-shadow: 0 8px 18px rgba($cyan, .35);
+            }
+        }
+
+        // ===== Accent badge for taglines =====
+        .badge-accent {
+            display: inline-block;
+            margin-bottom: .75rem;
+            padding: .35rem .65rem;
+            border-radius: 999px;
+            background: rgba($cyan, .12);
+            color: $cyan;
+            font-weight: 600;
+            font-size: .9rem;
+        }
+
+        // ===== Quick-fact chips =====
+        .fact-chips .chip {
+            border: 1px solid rgba($cyan, .25);
+            background: rgba($cyan, .07);
+            color: #1f2a37;
+            padding: .4rem .7rem;
+            border-radius: 999px;
+            font-size: .92rem;
+            transition: transform .15s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        // ===== Typography polish =====
+        .bio-card h3 {
+            font-size: clamp(3.4rem, 4vw, 3.25rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .bio-card p {
+            font-size: clamp(1.7rem, 1.1vw + .7rem, 2rem);
+            line-height: 1.8;
+        }
+
+        // ===== Layout tweaks to your existing rules =====
         .two_col_row {
+            // keep your flex row but allow wrapping on small screens
+            flex-wrap: nowrap;
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -42,50 +169,66 @@
             -webkit-box-direction: normal;
             -ms-flex-direction: row;
             flex-direction: row;
-            -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap;
+            margin-bottom: 40px;
 
             @include media($tablet) {
-                -ms-flex-wrap: wrap-reverse;
-                flex-wrap: wrap-reverse;
+                flex-wrap: wrap;
             }
         }
 
-        .column  {
-            width: 52%;
+        .column.image_col {
+            width: 36%;
+        }
 
-            @include media($tablet) {
+        .column.text_col {
+            width: 64%;
+        }
+
+        // on tablets/phones, stack and reset paddings
+        @include media($tablet) {
+            .column.image_col,
+            .column.text_col {
                 width: 100%;
-                margin-top: 20px;
+                padding-inline: 0 !important;
+                margin-top: 14px;
+            }
+        }
+
+        // Optional: big drop cap on first paragraph (nice for long bios)
+        .bio-card .text_col p:first-of-type::first-letter {
+            float: left;
+            font-size: 3rem;
+            line-height: .9;
+            padding-right: .25rem;
+            color: $cyan;
+            font-weight: 700;
+        }
+
+        .clinic-announcement {
+            background: linear-gradient(135deg, rgba($cyan, .08), rgba($cyan, .02));
+            border: 2px solid rgba($cyan, .25);
+            border-radius: 20px;
+            padding: clamp(2rem, 4vw, 4rem);
+            box-shadow: 0 8px 20px rgba(0,0,0,.05);
+
+            .announcement-title {
+                font-size: clamp(2rem, 4vw, 3rem);
+                font-weight: 800;
+                color: $cyan;
+                margin-bottom: 1rem;
             }
 
-            &:first-child {
-                width: 48%;
-                padding-right: 2.5%;
-
-                @include media($tablet) {
-                    width: 100%;
-                    padding-right: 0;
-                }
+            .announcement-text {
+                font-size: 2rem;
+                font-weight: 500;
+                color: #222;
             }
 
-            &:last-child {
-                padding-left: 2.5%;
-
-                @include media($tablet) {
-                    padding-left: 0;
-                }
-            }
-
-            p {
-                font-size: 20px;
-                line-height: 1.8;
-                margin-bottom: 40px;
-
-                @include media($mobile) {
-                    margin-bottom: 20px;
-                    font-size: 18px;
-                }
+            .announcement-address {
+                font-style: normal; // override <address>
+                font-size: 1.8rem;
+                font-weight: 600;
+                color: #111;
             }
         }
     }

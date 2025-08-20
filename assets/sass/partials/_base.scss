@@ -10,6 +10,9 @@
 p {
 	margin-bottom: 10px;
 }
+.page {
+	margin: 0;
+}
 
 html, body {
 	min-height: 100%;
@@ -114,7 +117,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 
 	&.blue {
 		background: $cyan;
-		color: $black;
+		color: $white;
 
 		&:hover {
 			background: $darkCyan;
@@ -126,7 +129,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 
 	&:before {
 		content: '';
-		background: rgba(255,255,255,.5);
+		background: rgba(0,0,0,.5);
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -145,6 +148,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 
 		h1 {
 			font-size: 4.5em;
+			color: $white;
 
 			@include media($tablet) {
 				font-size: 3.5em
@@ -161,6 +165,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 
 		h2 {
 			font-size: 3.5em;
+			color: $white;
 
 			@include media($tablet) {
 				font-size: 2.8em
@@ -173,17 +178,19 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 
 		p {
 			font-size: 28px;
-			margin: 20px 0 40px;
-			color: $black;
+			margin: 20px auto 40px;
+			color: $white;
 			line-height: 1.4;
+			max-width: 60%;
 
 			@include media($tablet) {
 				font-size: 1.4em;
+				max-width: 80%;
 			}
 
 			@include media($mobile) {
 				font-size: 1.2em;
-				margin: 10px 0 20px;
+				max-width: 100%;
 			}
 		}
 
@@ -202,10 +209,10 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: horizontal;
+	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
-	flex-direction: row;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	-ms-flex-wrap: nowrap;
 	flex-wrap: nowrap;
 	justify-content: flex-end;
@@ -214,16 +221,11 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	-webkit-align-items: center;
 
 	img {
-		width: 30px;
-		margin-right: 10px;
+		width: 20px;
 		-webkit-transition: all 1s ease-in-out;
 		-moz-transition:  all 1s ease-in-out;
 		-o-transition:  all 1s ease-in-out;
 		transition:  all 1s ease-in-out;
-
-		@include media($tablet) {
-			width: 25px;
-		}
 	}
 
 	h3 {
@@ -234,10 +236,6 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	a {
 		color: $darkBlue;
 		line-height: 1;
-
-		&:not(.button) {
-			font-size: 28px;
-		}
 	}
 
 	&.alt {
@@ -273,13 +271,82 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	}
 }
 
-img.custom, .custom img {
-	border-top-left-radius: 50px !important;
-	border-bottom-right-radius: 50px !important;
-	-webkit-border-top-left-radius: 50px !important;
-	-webkit-border-bottom-right-radius: 50px !important;
+.social_media {
+	width: 60%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	justify-content: center;
+	-webkit-justify-content: center;
+	align-items: center;
+	-webkit-align-items: center;
+	gap: 10px;
+	column-gap: 10px;
+	-webkit-column-gap: 10px;
+	-moz-column-gap: 10px;
+
+	&.footer {
+		justify-content: flex-start;
+		-webkit-justify-content: flex-start;
+
+		@include media($mobile) {
+			justify-content: center;
+			-webkit-justify-content: center;
+		}
+	}
+
+	.icon {
+		width: 35px;
+		border-radius: 50px;
+		-webkit-border-radius: 50px;
+		-moz-border-radius: 50px;
+		background: $cyan;
+		padding: 8px;
+	}
 }
 
-.DayPicker-Months, .DayPicker-Month, .DayPicker-Caption, .DayPicker-Caption > div {
-	position: unset;
+.phone_wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	align-items: center;
+	-webkit-align-items: center;
+	justify-content: flex-end;
+	-webkit-justify-content: flex-end;
+	gap: 10px;
+	width: 20%;
+
+	p {
+		margin: 0;
+
+		a {
+			@include oswald;
+			color: $cyan;
+			font-size: 1.5rem;
+			-webkit-transition: all 1s ease-in-out;
+			-moz-transition:  all 1s ease-in-out;
+			-o-transition:  all 1s ease-in-out;
+			transition:  all 1s ease-in-out;
+		}
+	}
+
+	&.footer {
+		a {
+			color: $white;
+		}
+	}
+
+
 }

@@ -1,5 +1,6 @@
 <?php
-	$bgImage = get_the_post_thumbnail_url();
+global $blocks;
+$bgImage = get_the_post_thumbnail_url();
 ?>
 
 <section class="hero my_row" style="background: url(<?php echo $bgImage; ?>) no-repeat; background-size: cover; ">

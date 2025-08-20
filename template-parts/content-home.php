@@ -15,27 +15,6 @@
 
 </section>
 
-<section class="my_row about_tabs">
-
-	<div class="container">
-
-		<?php $about = get_field('about_section'); ?>
-
-		<h3> <?php  echo $about['title']; ?></h3>
-		<div class="my_row">
-			<div class="image_col">
-				<img class="custom" src="<?php echo $about['image']['url']; ?>" alt="<?php echo $about['image']['name']; ?>">
-			</div>
-			<div class="text_col">
-				<?php  echo $about['description']; ?>
-			</div>
-		</div>
-
-	</div>
-
-</section>
-
-
 <?php if ( have_rows( 'review_slider' ) ) : ?>
 	<section class="my_row review_slider">
 		<div class="container">

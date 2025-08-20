@@ -14,10 +14,10 @@
 
 get_header();
 
-$post_id = get_post_meta( 'id' );
+/*$post_id = get_post_meta( 'id' );
 $post    = get_post( $post_id );
 $blocks  = parse_blocks( $post->post_content );
-set_query_var( 'blocks', $blocks );
+set_query_var( 'blocks', $blocks );*/
 
 ?>
 

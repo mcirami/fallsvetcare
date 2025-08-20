@@ -15,15 +15,32 @@
 		<div class="container">
 			<div class="three_col_section">
 				<div class="column">
-					<h3>Falls Vet Care</h3>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="logo mw-20" src="<?php echo get_template_directory_uri() . "/images/logo-white.png"?>" alt="">
+					</a>
 					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						)
-					);
+					$address = get_field('address', 'options');
 					?>
+					<p class="mb-0"><?php echo $address['line_2']; ?></p>
+					<p>	<?php  echo $address['line_3']; ?></p>
+					<div class="phone_wrap d-flex justify-content-center justify-content-md-start number_box footer w-100 mb-2">
+						<span>
+							<img src="<?php echo get_template_directory_uri() . "/images/icon-envelope-white.png"?>" alt="">
+						</span>
+						<p><a class="email" href="mailto:<?php the_field('email', 'options');?>"><?php the_field('email', 'options');?></a></p>
+					</div>
+					<div class="phone_wrap d-flex justify-content-center justify-content-md-start number_box footer w-100 mb-2">
+						<span>
+							<img src="<?php echo get_template_directory_uri() . "/images/icon-phone-white.png"?>" alt="">
+						</span>
+						<p><a class="phone" href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></p>
+					</div>
+					<div class="phone_wrap d-flex justify-content-center justify-content-md-start number_box footer w-100">
+						<span>
+							<img src="<?php echo get_template_directory_uri() . "/images/sms-icon-white.png"?>" alt="">
+						</span>
+						<p><a class="phone" href="tel:<?php the_field('phone_number_two', 'options');?>"><?php the_field('phone_number_two', 'options');?></a></p>
+					</div>
 				</div>
 				<div class="column">
 					<?php
@@ -52,43 +69,35 @@
 
 				</div>
 				<div class="column">
-					<h3>Reach Us</h3>
+					<h3 class="mb-4">Useful Links</h3>
 					<?php
-						$address = get_field('address', 'options');
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
 					?>
-					<p><?php echo $address['line_1']; ?></p>
-					<p><?php echo $address['line_2']; ?></p>
-					<p><?php echo $address['line_3']; ?></p>
-					<div class="social_media">
-						<a target="_blank" href="https://www.facebook.com/dr.ginabauman">
-							<img class="facebook" src="<?php echo get_template_directory_uri() . "/images/icon-facebook-footer.png"?>" alt="">
-						</a>
-					</div>
-					<div class="contact_info">
-						<img src="<?php echo get_template_directory_uri() . "/images/icon-envelope.png"?>" alt="">
-						<h3><a class="email" href="mailto:<?php the_field('email', 'options');?>"><?php the_field('email', 'options');?></a></h3>
-					</div>
-					<div class="contact_info">
-						<span>
-							<img src="<?php echo get_template_directory_uri() . "/images/icon-phone.png"?>" alt="">
-						</span>
-						<h3><a class="phone" href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></h3>
+					<div class="social_media footer w-100">
+						<?php if( have_rows('social_media', 'options') ): ?>
+							<?php while( have_rows('social_media', 'options') ): the_row(); ?>
+								<a class="icon" target="_blank" href="<?php the_sub_field('social_media_url');?>">
+									<?php $image =  get_sub_field('social_media_icon');?>
+									<img src="<?php echo $image['url'];?>" alt="">
+								</a>
+							<?php endwhile; ?>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
-			<div class="copy">
-				<p>&copy; 2025 Falls Vet Care</p>
-			</div>
+		</div>
+		<div class="copy">
+			<p>&copy; 2025 Falls Vet Care</p>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
-<script>
-	jQuery(document).ready(function($) {
-
-	});
-</script>
 </body>
 </html>

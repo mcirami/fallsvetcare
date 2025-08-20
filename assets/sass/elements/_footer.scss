@@ -1,9 +1,14 @@
 footer:not(.comment-meta) {
     background: $cyan;
-    padding: 100px 0;
+    padding: 50px 0 0;
 
     @include media($mobile) {
-        padding: 50px 0;
+        padding: 20px 0 0;
+    }
+
+    .logo {
+        max-width: 125px;
+        margin-bottom: 20px;
     }
 
     .three_col_section {
@@ -25,19 +30,32 @@ footer:not(.comment-meta) {
         }
 
         .column {
-            color: $darkBlue;
+            color: $white;
 
             @include media($mobile) {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 20px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                justify-content: center;
+                -webkit-justify-content: center;
+                align-items: center;
+                -webkit-align-items: center;
             }
 
 
             h3 {
-                @include popmed;
+                @include popbold;
                 font-size: 24px;
-                margin-bottom: 25px;
+                display: inline-block;
 
                 @include media($tablet) {
                     font-size: 18px;
@@ -62,7 +80,7 @@ footer:not(.comment-meta) {
 
                 a {
                     @include proxreg;
-                    color: $darkBlue;
+                    color: $white;
                     font-size: 18px;
                 }
             }
@@ -72,88 +90,19 @@ footer:not(.comment-meta) {
     .copy {
         text-align: center;
         margin-top: 40px;
+        padding: 20px;
+        color: rgba(255,255,255,.6);
+        border-top: 1px solid rgba(255,255,255,.2);
+
+        @include media($mobile) {
+            margin-top: 0;
+        }
     }
 }
 
-.social_media {
-    margin-top: 40px;
-
-    @include media($mobile) {
-        text-align: center;
-    }
-
+.social_media.footer {
+    margin-top: 20px;
     a {
-        display:inline-block;
-    }
-
-    img {
-        width: 40px;
-        border-radius: 4px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-    }
-}
-
-.contact_info {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    -webkit-justify-content: flex-start;
-    align-items: center;
-    -webkit-align-items: center;
-    gap: 10px;
-    column-gap: 10px;
-    -webkit-column-gap: 10px;
-    -moz-column-gap: 10px;
-    margin: 15px 0;
-
-    @include media($mobile) {
-        justify-content: center;
-        -webkit-justify-content: center;
-    }
-
-    &:last-child {
-        margin-top: 0;
-    }
-
-    img {
-        width: 30px;
-
-        @include media($tablet) {
-            width: 20px;
-        }
-    }
-
-    h3 {
-        margin: 0 !important;
-
-        @include media($tablet) {
-            font-size: 16px;
-        }
-
-        a {
-            color: $darkBlue;
-
-
-            &.email {
-                @include proxreg;
-                font-size: 20px;
-            }
-
-            &.phone {
-                font-size: 30px;
-
-                @include media($tablet) {
-                    font-size: 20px;
-                }
-            }
-        }
+        border: 1px solid $white;
     }
 }

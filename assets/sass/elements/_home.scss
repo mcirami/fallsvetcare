@@ -16,14 +16,14 @@
 
     .column {
         width: 50%;
-        color: $darkGray;
+        color: $white;
 
         @include media($tablet) {
             width: 100%;
         }
 
         &.text_col {
-            background: url('../images/welcome-bg.jpg') no-repeat;
+            background: url('../images/column-bg.png') no-repeat;
             background-size: cover;
             padding: 5%;
 
@@ -38,7 +38,7 @@
             }
 
             p {
-                color: $darkGray;
+                color: $white;
                 font-size: 20px;
                 line-height: 1.8;
                 margin-bottom: 40px;
@@ -46,6 +46,16 @@
                 @include media($mobile) {
                     font-size: 1em
                 }
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(71, 122, 160,0.7);
             }
         }
 
@@ -157,6 +167,7 @@
     }
 
     .swiper {
+        max-width: 800px;
 
         .swiper-wrapper {
             padding: 20px 0;
@@ -186,10 +197,6 @@
             .content_wrap {
                 max-width: 75%;
                 margin: 0 auto;
-
-                @include media($mobile) {
-                    max-width: 100%;
-                }
             }
         }
 
