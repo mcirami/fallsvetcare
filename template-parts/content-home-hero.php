@@ -3,7 +3,7 @@ global $blocks;
 $bgImage = get_the_post_thumbnail_url();
 ?>
 
-<section class="hero my_row" style="background: url(<?php echo $bgImage; ?>) no-repeat; background-size: cover; ">
+<section class="hero my_row" style="background: url(<?php echo $bgImage; ?>) no-repeat; background-size: cover; background-position: 50%; ">
 	<article class="text_wrap">
 		<div class="container">
 			<?php
