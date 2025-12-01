@@ -40,11 +40,11 @@
 	<?php if(str_contains(get_the_title(), 'About')) : ?>
 			<section class="clinic-announcement my-5 d-flex">
 				<div class="container text-center">
-					<h2 class="announcement-title">WE ARE MOVING!!</h2>
-					<p class="announcement-text mb-2">Our new location will be located at:</p>
+					<h2 class="announcement-title">WE HAVE MOVED!!</h2>
+					<p class="announcement-text mb-2">Our new location is at:</p>
 					<address class="announcement-address mb-0">
 						40 Walter Ct.<br>
-						Moscow Mills, MO
+						Moscow Mills, MO, 63362
 					</address>
 				</div>
 			</section>
