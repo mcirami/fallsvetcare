@@ -125,6 +125,10 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	}
 }
 
+.home .hero {
+    background-position: 50%;
+}
+
 .hero {
 
 	&:before {
