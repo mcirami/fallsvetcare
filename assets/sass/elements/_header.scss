@@ -267,20 +267,6 @@ header {
                 order: 1;
                 width: 60%;
             }
-
-            .address_wrap {
-                text-align: right;
-                margin-left: auto;
-
-                @include media($mobile) {
-                    text-align: center;
-                    margin-left: 0;
-                }
-
-                p {
-                    margin-bottom: 0;
-                }
-            }
         }
 
         .link_column {
@@ -334,6 +320,31 @@ header {
                     font-size: 16px;
                 }
             }
+        }
+    }
+}
+
+.address_wrap {
+    text-align: right;
+    margin-left: auto;
+
+    @include media($mobile) {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    a {
+        font-size: 14px;
+        margin-top: 10px;
+        display: inline-block;
+        background: $cyan;
+
+        &:hover {
+            background: $darkCyan;
         }
     }
 }

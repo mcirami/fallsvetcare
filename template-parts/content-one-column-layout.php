@@ -4,9 +4,7 @@
 		<div class="my_row">
 			<?php
 
-			foreach ($blocks as $block) {
-				echo render_block($block);
-			}
+			the_content();
 			?>
 		</div>
 	</div>
