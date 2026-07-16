@@ -121,7 +121,7 @@
 							   href="/employee-portal/"
 							>
 								Employee Portal
-							</a-->>
+							</a>-->
 						</div>
 					</div>
 				</div><!-- header_columns -->
