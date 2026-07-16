@@ -272,7 +272,6 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 }
 
 .social_media {
-	width: 60%;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -326,7 +325,6 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
 	justify-content: flex-end;
 	-webkit-justify-content: flex-end;
 	gap: 10px;
-	width: 20%;
 
 	p {
 		margin: 0;

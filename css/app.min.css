@@ -12300,7 +12300,6 @@ img {
 }
 
 .social_media {
-  width: 60%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -12341,7 +12340,6 @@ img {
   justify-content: flex-end;
   -webkit-justify-content: flex-end;
   gap: 10px;
-  width: 20%;
 }
 .phone_wrap p {
   margin: 0;
@@ -12555,17 +12553,12 @@ header .header_top {
   border-bottom: 1px solid rgba(155, 155, 155, 0.1);
   padding-bottom: 15px;
 }
-header .header_top .phone_wrap {
-  width: 25%;
-}
 header .header_top .phone_wrap p {
   line-height: 1;
 }
 @media screen and (max-width: 549px) {
   header .header_top .phone_wrap {
-    width: auto;
     gap: 5px;
-    flex-direction: column;
   }
 }
 @media screen and (max-width: 549px) {
@@ -12576,14 +12569,6 @@ header .header_top .phone_wrap p {
 @media screen and (max-width: 549px) {
   header .header_top .number_box img {
     width: 18px;
-  }
-}
-header .header_top .social_media {
-  width: 50%;
-}
-@media screen and (max-width: 549px) {
-  header .header_top .social_media {
-    width: auto;
   }
 }
 @media screen and (max-width: 549px) {

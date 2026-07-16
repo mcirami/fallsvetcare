@@ -40,12 +40,6 @@
 		<div class="header_top">
 			<div class="container">
 				<div class="d-flex align-items-center justify-content-between">
-					<div class="phone_wrap d-flex justify-content-start number_box">
-						<span>
-							<img src="<?php echo get_template_directory_uri() . "/images/icon-phone-blue.png"?>" alt="">
-						</span>
-						<p><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></p>
-					</div>
 					<div class="social_media">
 						<?php if( have_rows('social_media', 'options') ): ?>
 							<?php while( have_rows('social_media', 'options') ): the_row(); ?>
@@ -56,11 +50,19 @@
 							<?php endwhile; ?>
 						<?php endif; ?>
 					</div>
-					<div class="phone_wrap d-flex justify-content-end number_box">
-						<span>
-							<img src="<?php echo get_template_directory_uri() . "/images/sms-icon.png"?>" alt="">
-						</span>
-						<p><a href="sms:<?php the_field('phone_number_two', 'options');?>"><?php the_field('phone_number_two', 'options');?></a></p>
+					<div class="d-flex flex-column">
+						<div class="phone_wrap d-flex justify-content-start number_box mb-3">
+							<span>
+								<img src="<?php echo get_template_directory_uri() . "/images/icon-phone-blue.png"?>" alt="">
+							</span>
+							<p><a href="tel:<?php the_field('phone_number', 'options');?>"><?php the_field('phone_number', 'options');?></a></p>
+						</div>
+						<div class="phone_wrap d-flex justify-content-end number_box">
+							<span>
+								<img src="<?php echo get_template_directory_uri() . "/images/sms-icon.png"?>" alt="">
+							</span>
+							<p><a href="sms:<?php the_field('phone_number_two', 'options');?>"><?php the_field('phone_number_two', 'options');?></a></p>
+						</div>
 					</div>
 				</div>
 			</div>

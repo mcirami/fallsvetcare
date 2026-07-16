@@ -175,16 +175,13 @@ header {
         padding-bottom: 15px;
 
         .phone_wrap {
-            width: 25%;
 
             p {
                 line-height: 1;
             }
 
             @include media($smallMobile) {
-                width: auto;
                 gap: 5px;
-                flex-direction: column;
             }
 
              a {
@@ -201,11 +198,6 @@ header {
         }
 
         .social_media {
-            width: 50%;
-
-            @include media($smallMobile) {
-                width: auto;
-            }
 
             .icon {
                 @include media($smallMobile) {
