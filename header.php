@@ -116,12 +116,12 @@
 								<?php echo $address['line_2']; ?> <br/>
 								<?php  echo $address['line_3']; ?>
 							</p>
-							<a
+							<!--<a
 							   class="wp-block-button__link has-white-color has-text-color has-background wp-element-button"
 							   href="/employee-portal/"
 							>
 								Employee Portal
-							</a>
+							</a-->>
 						</div>
 					</div>
 				</div><!-- header_columns -->
@@ -144,11 +144,11 @@
 					<?php echo $address['line_2']; ?> <br/>
 					<?php  echo $address['line_3']; ?>
 				</p>
-				<a class="wp-block-button__link has-white-color has-text-color has-background wp-element-button"
+				<!--<a class="wp-block-button__link has-white-color has-text-color has-background wp-element-button"
 				   href="/employee-portal/"
 				>
 					Employee Portal
-				</a>
+				</a>-->
 			</div>
 		</div>
 	</div>
